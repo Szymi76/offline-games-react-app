@@ -1,9 +1,8 @@
 import "./index.css";
 
 import App from "./App.tsx";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import CustomSnackbarProvider from "./layouts/CustomSnackbar.tsx";
-import Navigator from "./layouts/Navigator.tsx";
 import Navigator2 from "./layouts/Navigator2.tsx";
 import { NextUIProvider } from "@nextui-org/react";
 import NextUIThemeProvider from "./layouts/NextUIThemeProvider.tsx";
@@ -19,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <NextUIProvider id="next-ui-provider">
       <NextUIThemeProvider>
         <CustomSnackbarProvider>
-          <BrowserRouter>
+          <HashRouter>
             <OmitPages
               omit={["/auth/login", "/auth/register"]}
               element={<Navigator2 />}
@@ -28,7 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               <App />
             </div>
             <Footer />
-          </BrowserRouter>
+          </HashRouter>
         </CustomSnackbarProvider>
       </NextUIThemeProvider>
     </NextUIProvider>
