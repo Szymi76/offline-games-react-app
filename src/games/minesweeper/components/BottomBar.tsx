@@ -15,7 +15,7 @@ const BottomBar = () => {
 
   return (
     <div className="flex justify-between">
-      <Button variant="faded" onClick={restartGame}>
+      <Button variant="faded" onClick={() => restartGame()}>
         Nowa gra
       </Button>
       <Tooltip content="Wybierz trudności rozgrywki" placement="bottom">

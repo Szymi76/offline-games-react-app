@@ -13,11 +13,11 @@ const TopGameBar = () => {
   const game = useGame();
 
   return (
-    <div className="bg-default-100 border-2 border-default-200 rounded-lg p-2 w-full flex items-center justify-between gap-3">
+    <div className="flex w-full items-center justify-between gap-3 rounded-lg border-2 border-default-200 bg-default-100 p-2">
       <Tabs
         variant="bordered"
         selectedKey={game.mode}
-        onSelectionChange={(key) => game.changeMode(key)}
+        onSelectionChange={(key) => game.changeMode(key as GameMode)}
       >
         {gameModes.map((gameMode) => {
           return <Tab key={gameMode} title={gameTitles.get(gameMode)} />;
